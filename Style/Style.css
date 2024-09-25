@@ -142,6 +142,7 @@ header{
 .main{
     background:linear-gradient(var(--cl-netrual-100) 50%, var(--cl-primary-100) 50%);
     height: 100%;
+    padding-block: 2rem;
 }
 
 .main > div{
@@ -151,22 +152,23 @@ header{
 
     width:min( 100% -  var(--hr-padding),var(--width));
     margin-inline:auto;
-    height: min(500px,100% - 1rem);
+    /* height: min(500px,100% - 1rem); */
     background-color: rgba(255, 255, 255, 0.548);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter:blur(10px);
+    padding: 3rem;
 }
 @media (height<=30em)
 {
     .main{
-        height: revert;
+        height: none;
     }
 }
 
 .btn-group{
     display: grid;
     grid-template-columns: repeat(2,230px);
-    gap:1rem;
+    gap:1.6rem;
     width: min(600px , 100%);
     justify-content: center;
 
@@ -174,10 +176,16 @@ header{
 .btn-group>*{
     padding-block:10px ;
     min-width: 100px;
+    position: relative;
+}
+.btn-group>*::before{
+    content: '';
+    position: absolute;
 }
 @media (width<=50em){
     .btn-group{
-            grid-template-columns: calc(100% - 5rem);
+            grid-template-columns: calc(100% - 2rem);
+            grid-template-rows: repeat(4,50px);
     }
 }
 
@@ -207,4 +215,9 @@ header{
 
 .logo-z:hover{
     animation: shake linear .4s;
+}
+
+h1{
+    text-align: center;
+    text-wrap:wrap;
 }
