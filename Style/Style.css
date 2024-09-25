@@ -1,5 +1,5 @@
 /* 
-THE SITE IS WORKING ON SCREEN WIDTH 200PX AND MORE
+THE SITE IS WORKING ON SCREEN WIDTH 250PX AND MORE
 */
 /* Site Setup */
 :root{
@@ -151,7 +151,7 @@ header{
 
     width:min( 100% -  var(--hr-padding),var(--width));
     margin-inline:auto;
-    height: min(500px,100% - 4rem);
+    height: min(500px,100% - 1rem);
     background-color: rgba(255, 255, 255, 0.548);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter:blur(10px);
@@ -173,6 +173,7 @@ header{
 }
 .btn-group>*{
     padding-block:10px ;
+    min-width: 100px;
 }
 @media (width<=50em){
     .btn-group{
@@ -188,11 +189,13 @@ header{
 /* animation */
 @keyframes shake {
     0%{ transform: translate(5px,0)}
-    50%{ transform:translate(-10px,0);}
-    100%{transform:rotate(10px,0);}
+    30%{ transform:translate(0px,0);}
+    60%{transform:translate(-5px,0);}
+    100%{transform:translate(0px,0);}
+
 }
 .logo:hover{
-    transform: scale(1.2);
+    transform: scale(1.05);
     transition: transform .5s;
 }
 .logo{
@@ -203,5 +206,5 @@ header{
 }
 
 .logo-z:hover{
-    animation: shake linear .6s;
+    animation: shake linear .4s;
 }
