@@ -14,7 +14,7 @@
 <body>
     <header class="text-white bg-pr-300">
         <a href="" aria-label="smart-school">
-            <img src="assist/Icon/PNG/Navy Blue Icon.png" class="logo-z" alt="">
+            <img src="assist/Bookmark Icon/PNG/Asset 2.png" class="logo-z" alt="">
         </a>
     </header>
 
@@ -48,17 +48,22 @@
                 
             </div>
         </div>
-    </main> 
-    <script>
-        const auto = function(){
-            let childrenCount  = document.querySelector('.btn-group').children.length;
-            if(childrenCount % 2 != 0 )
-                document.querySelectorAll('[data-type=button]').forEach(
-                    (e,i) => {if(i+2 % 2 == 0 ){ e.classList.add('shrink') }  }
-                )
-        }
-        auto()
-    </script>
-</body>
+    </main>
+    <footer class="grid-center">
+        <span>
+            Copytight &copy; 2024 <a href="">smart school</a>. Desigend by <a href="">Technology Stream</a> All rights
+        </span>
+    </footer>
 
+</body>
+<script>
+    const auto = function(){
+        let childrenCount  = document.querySelector('.btn-group').children.length;
+        if(childrenCount % 2 != 0 )
+            document.querySelectorAll('[data-type=button]').forEach(
+                (e,i) => {if(i+2 % 2 == 0 ){ e.classList.add('shrink') }  }
+            )
+    }
+    auto()
+</script>
 </html>
