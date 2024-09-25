@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="Style/Style.css">
     <title>Smart_School</title>
     <link rel="shortcut icon" href="assist/Icon Without Frame/PNG/White Icon_2.png" type="image/x-icon">
+    <script src="scripts/js.js" defer></script>
 </head>
 
 <body>
@@ -19,7 +20,7 @@
     </header>
 
     <main class="main grid-center">
-        <div class="grid-center round-border border-pr-100" >
+        <div class="grid-center round-border border-pr-100" id="scroll-con">
             <a aria-label="smart-school" href="#"><img src="assist/Horizontal/JPG/min.jpg" width="350" class="logo" alt=""></a>
             <h1 class="fs-header fw-bloder text-pr-300">Download Application</h1>
             <div class="btn-group">
@@ -41,7 +42,7 @@
                     <img src="assist/icons/29544-9ddf42fb.png" width="23" alt="" srcset="">
                     Apk Pure
                 </a>
-                <a class="fs-button round-border bg-pr-300 text-white " aria-label="sds" id="di"  data-type="button" href="#">
+                <a class="fs-button round-border bg-pr-300 text-white " aria-label="sds" id="dir"  data-type="button" href="#">
                     <img src="assist/icons/1011402-43a2d5dc.png" width="23" alt="">
                     Direct
                 </a>
@@ -56,24 +57,4 @@
     </footer>
 
 </body>
-<script>
-    const auto = function(){
-        let childrenCount  = document.querySelector('.btn-group').children.length;
-        if(childrenCount % 2 != 0 )
-            document.querySelectorAll('[data-type=button]').forEach(
-                (e,i) => {if(i+2 % 2 == 0 ){ e.classList.add('shrink') }  }
-            )
-    }
-    auto()
-
-    const scrollTranformation = function(){
-        document.onscroll = function(e){
-            if(document.body.scrollTop > 10)
-                document.getElementById('header').style.backgroundColor='#514fcfbe';
-            else
-                document.getElementById('header').style.backgroundColor='#07194B';
-            }
-
-    }();
-</script>
 </html>
