@@ -6,16 +6,20 @@ THE SITE IS WORKING ON SCREEN WIDTH 250PX AND MORE
     --cl-netrual-100:#FFFFFF;
     --cl-natrual-900:#000000;
 
-    --cl-primary-100:#4E4BFF; /* Blue */
+    --cl-primary-100:#514fcfbe; /* Blue */
     --cl-primary-200:#27EABB; /* Turquoise */
     --cl-primary-300:#07194B; /* Downriver */
 
     --cl-secondary-100:#FE8A46; /* Coral */
     --cl-secondary-200:#FF4949; /* SunsetOrange */
 
-    /* --fs-header:2.5rem; */
+    --cl-gp:color-mix(in srgb, #514fcfbe 50%, lightgreen);
+    --cl-ap:color-mix(in srgb, #514fcfbe 50%, green);
+    --cl-as:color-mix(in srgb, #514fcfbe 50%, gray);
+    --cl-di:color-mix(in srgb, #07194B 50%, black);
+
     --fs-button:1.8rem;
-    --fs-header:clamp(1rem, 7vw ,2.3rem);
+    --fs-header:clamp(1rem, 7vw ,2.7rem);
 
     --ff-main: "Be Vietnam Pro", sans-serif;
 
@@ -23,12 +27,16 @@ THE SITE IS WORKING ON SCREEN WIDTH 250PX AND MORE
     --fw-bold:400;
     --fw-bolder:700;
 }
-@media  (width<=50em) {
+
+@media  (30rem <= width<=50em) {
     :root{
         --fs-button:1.4rem;
-    }
-    }
-
+    }}
+@media  (width<=29rem) {
+    :root{
+        --fs-button:4vw;
+        --fs-header:7vw;
+    }}
 
 *,::after,::before{
     box-sizing: border-box;
@@ -41,6 +49,9 @@ a[data-type='button']
     justify-content: center;
     align-items: center;
     gap:5px;
+    padding-block:10px;
+    min-width: 100px;
+    position: relative;
 }
 a[data-type='button']:focus{
     color: var(--cl-netrual-100);
@@ -143,12 +154,16 @@ header{
     position:sticky;
     top:0;
     z-index: 1;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    border-bottom: 1px solid var(--cl-netrual-100);
+    transition: background-color 0.5s;
 }
 
 .main{
     background:linear-gradient(var(--cl-netrual-100) 50%, var(--cl-primary-100) 50%);
-    /* height: 100%; */
-    padding-block: 2rem;
+    min-height: 90vh;
+    /* padding-block: 2rem; */
 }
 
 .main > div{
@@ -158,37 +173,33 @@ header{
 
     width:min( 100% -  var(--hr-padding),var(--width));
     margin-inline:auto;
-    /* height: min(500px,100% - 1rem); */
+    height: min(900px , 100% - 10rem);
+    margin-block: calc(var(--hr-padding) / 2);
     background-color: rgba(255, 255, 255, 0.548);
     backdrop-filter: blur(50px);
     -webkit-backdrop-filter:blur(50px);
     padding: 3rem;
 }
-@media (height<=30em)
+/* @media (height<=30em)
 {
     .main{
-        height: none;
+        height: none; 
     }
 
-}
+} */
 
 .btn-group{
     display: grid;
+    justify-content: center;
     grid-template-columns: repeat(2,260px);
     gap:1.6rem;
     width: min(600px , 100%);
-    justify-content: center;
 
 }
-.btn-group>*{
-    padding-block:10px ;
-    min-width: 100px;
-    position: relative;
-}
-.btn-group>*::before{
-    content: '';
-    position: absolute;
-}
+/* .btn-group>*{
+
+} */
+
 @media (width<=40rem){
     .btn-group{
             grid-template-columns: calc(100% - 2rem);
@@ -222,22 +233,29 @@ header{
 .logo-z{
     height: 100%;
     padding: .5rem 1rem;
-
 }
 
 .logo-z:hover{
     animation: shake linear .4s;
 }
 
-h1{
-    text-align: center;
+.main h1{
     text-wrap:wrap;
 }
 footer{
-    height: 160px;
+    height: 80px;
     text-wrap:balance;
-    padding: 3rem;
+    text-align: center;
+    padding: 2rem;
 }
 
-footer{
+a#as:hover{
+    background-color: var(--cl-as);
+}
+a#gp:hover{
+    background-color: var(--cl-gp);
+}a#ap:hover{
+    background-color: var(--cl-ap);
+}a#dir:hover{
+    background-color: var(--cl-di);
 }
