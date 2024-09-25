@@ -259,3 +259,9 @@ a#gp:hover{
 }a#dir:hover{
     background-color: var(--cl-di);
 }
+#scroll-con{
+    position: relative;
+    translate:0 -100px;
+    opacity: 0.5;
+    transition: all 1.5s;
+;}
