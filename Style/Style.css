@@ -36,12 +36,18 @@ THE SITE IS WORKING ON SCREEN WIDTH 250PX AND MORE
 
 a[data-type='button']
 {
-    display: inline-block;
+    display: flex;
     text-decoration: none;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap:5px;
 }
 a[data-type='button']:focus{
     color: var(--cl-natrual-900);
+}
+a[data-type='button']:hover{
+    background-color: var(--cl-primary-100);
+    transition: all 0.5s;
 }
 
 body{
@@ -154,8 +160,8 @@ header{
     margin-inline:auto;
     /* height: min(500px,100% - 1rem); */
     background-color: rgba(255, 255, 255, 0.548);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter:blur(10px);
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter:blur(50px);
     padding: 3rem;
 }
 @media (height<=30em)
